@@ -7,4 +7,5 @@ public class Client {
 
     public void OpenTicket(){};
     public void call(){};
+    public void singContract(){};
 }

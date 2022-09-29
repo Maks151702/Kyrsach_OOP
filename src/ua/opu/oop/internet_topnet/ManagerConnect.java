@@ -8,4 +8,5 @@ public class ManagerConnect {
     public void createContract(){};
     public void deleteContract(){};
     public void call(){};
+    public void singContract(){};
 }
