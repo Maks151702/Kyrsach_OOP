@@ -5,7 +5,7 @@ public class ManagerConnect {
     public String fullName;
     public int numberPhone;
 
-    void createContract(){};
-    void deleteContract(){};
-    void call(){};
+    public void createContract(){};
+    public void deleteContract(){};
+    public void call(){};
 }

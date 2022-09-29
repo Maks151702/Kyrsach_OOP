@@ -5,6 +5,6 @@ public class Client {
     public String address;
     public int numberPhone;
 
-    void OpenTicket(){};
-    void call(){};
+    public void OpenTicket(){};
+    public void call(){};
 }

@@ -8,5 +8,5 @@ public class Contract {
     public int cost;
     public int ID;
 
-    void connectClient(){};
+    public void connectClient(){};
 }
