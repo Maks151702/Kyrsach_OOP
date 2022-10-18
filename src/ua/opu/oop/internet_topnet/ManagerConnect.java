@@ -3,10 +3,8 @@ package ua.opu.oop.internet_topnet;
  * @author DarkCatty
  * @version 0.2.9
  */
-public class ManagerConnect {
+public class ManagerConnect extends Member {
     public String providerName;
-    public String fullName;
-    public int numberPhone;
 
 
     /**

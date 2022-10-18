@@ -3,15 +3,18 @@ package ua.opu.oop.internet_topnet;
  * @author DarkCatty
  * @version 0.2.11
  */
-public class Client {
-    public String fullname;
+import  java.util.Scanner;
+public class Client extends Member {
     public String address;
-    public int numberPhone;
-
     /**
      * Метод який создає заявку на підключення
      */
-    public void OpenTicket(){};
+    public void OpenTicket(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Input a name: ");
+        System.out.print("Input a phone: ");
+        System.out.print("Input a address: ");
+    }
 
     /**
      * Метод вітворює дзвінок клієнта/менеджера

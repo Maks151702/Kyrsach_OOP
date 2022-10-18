@@ -5,16 +5,12 @@ package ua.opu.oop.internet_topnet;
  */
 public class Contract {
     public String fullName;
-    public  String address;
+    protected String address;
     public String dateOfConnection;
     public String packageInet;
     public int cost;
     public int ID;
 
 
-    /**
-     * Метод що вертає ID контракта підключенного клієнта
-     * @return  ідентифікаційний номер контракту
-     */
-    public void connectClient(){};
+    protected void createIDClient(){};
 }
