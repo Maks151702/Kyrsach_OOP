@@ -10,4 +10,5 @@ public abstract class Member {
      * Метод вітворює дзвінок
      */
     public void call(){};
+    public void acceses(){};
 }

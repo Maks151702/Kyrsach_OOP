@@ -1,26 +1,40 @@
 package ua.opu.oop.internet_topnet;
+
+import java.util.Scanner;
+
 /**
  * @author DarkCatty
  * @version 0.0.7
  */
 public class Program {
     public String programName="TopNet";
+    public  int  countClient = 1702;
+    public  int[] stonks = new int[10];
 
+    int allProfit = 0;
     private void contractList(){};
+    public void showCountClient(){
+        Scanner scanCount = new Scanner(System.in);
+        System.out.println("Кількість клієнтів: " + countClient);
+    }
+    public void showCountConnectData(){
 
-    private void offInet(){};
+    }
 
-    protected void checkStatus(){};
+    public void allStonksConnect(){
+        for(int i=1;i<=stonks.length;i++){
+            allProfit =+ stonks[i];
+        }
+        System.out.println("Загальна вартість підключень: " + allProfit);
+    }
 
-    private void showCountClient(){};
+    public void countPackage(){
+        int[] tariffs= new int[10];
+        int manyTarif=tariffs.length;
+       // return manyTarif;
+    }
 
-    private void showCountConnectData(){};
+    public void maxCountClientHouse(){};
 
-    private void allStonksConnect(){};
-
-    private void countPackage(){};
-
-    private void maxCountClientHouse(){};
-
-    private void dayPlanMaxCountConnect(){};
+    public void dayPlanMaxCountConnect(){};
 }

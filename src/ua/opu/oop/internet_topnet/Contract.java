@@ -11,6 +11,7 @@ public class Contract {
     public int cost;
     public int ID;
 
-
-    protected void createIDClient(){};
+    protected void createIDClient(){
+        int ID= 3;
+    }
 }
