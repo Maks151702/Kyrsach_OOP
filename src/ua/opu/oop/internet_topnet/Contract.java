@@ -11,6 +11,9 @@ public class Contract {
     public int cost;
     public int ID;
 
+    /**
+     * створює кабінет клієнту
+     */
     protected void createIDClient(){
         int ID= 3;
     }

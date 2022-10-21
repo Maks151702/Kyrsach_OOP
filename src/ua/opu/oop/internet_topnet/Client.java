@@ -5,9 +5,10 @@ package ua.opu.oop.internet_topnet;
  */
 import  java.util.Scanner;
 public class Client extends Member {
+    /**
+     * @param address клієнт живе за цією адресою
+     */
     public String address;
-    public  String signature;
-    protected  String signatureС = "";
     /**
      * Метод який создає заявку на підключення
      */
@@ -16,32 +17,35 @@ public class Client extends Member {
         System.out.println("Input a name: ");
         System.out.println("Input a phone: ");
         System.out.println("Input a address: ");
-        String name = scan.next();
-        String phone = scan.next();
+        fullName = scan.next();
+        numberPhone = scan.nextInt();
         address = scan.next();
     }
 
     /**
-     * Метод вітворює дзвінок клієнта/менеджера
+     * Метод що підверджує підписання контракту зі сторони клієнта
      */
-    public void call(){};
+    public void singContract() {
+        Scanner signCheck = new Scanner(System.in);
+        String signature;
+        do {
+            signature = signCheck.next();
+            System.out.println("Поставив підпис");
+        } while (signature != sign);
+    }
 
     /**
-     * Метод що підверджує складання контракту зі сторони клієнта
+     *Метод що підверджує підписання контракту зі сторони клієнта
+     * @return повертає обранний таріф у контракт.
      */
-    public void singContract(){
-        Scanner sign = new Scanner(System.in);
-        do{
-            String signature =  sign.next();
-            System.out.println("Поставив підпис");
-        }while (signatureС==signature);
-    }
-    public void choseTarif(){
-        String nameTarif ="sd";
+    public void chooseTarif(){
+        Scanner tarifCheck = new Scanner(System.in);
+        String nameTarif;
         int speedInet;
         int[] tariffs= new int[10];
-        for(int i=1;i<tariffs.length;i++){
-            switch (i){
+        System.out.println("Оберіть 1 із 3 тарифів");
+        int choise = tarifCheck.nextInt();
+            switch (choise){
                 case(1):
                     speedInet=100;
                     nameTarif = "Стандарт";
@@ -55,7 +59,6 @@ public class Client extends Member {
                     nameTarif = "Gaming";
                     break;
             }
-        }
         //return nameTarif;
     }
 }

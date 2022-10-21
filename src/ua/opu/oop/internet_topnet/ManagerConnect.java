@@ -5,9 +5,10 @@ import java.util.Scanner;
  * @version 0.2.9
  */
 public class ManagerConnect extends Member {
-    public String providerName;
-    public  String signature;
-    protected  String signatureM = "allStar";
+    /**
+     * @param programName це назва программи та провайдера
+     */
+    public String programName="TopNet";
 
     /**
      * Метод що створює контракт
@@ -18,18 +19,15 @@ public class ManagerConnect extends Member {
      */
     public void deleteContract(){};
     /**
-     * Метод вітворює дзвінок клієнта/менеджера
-     */
-    public void call(){};
-    /**
      * Метод що підверджує складання контракту зі сторони провайдеру
      */
-    public void singContract(){
-        Scanner sign = new Scanner(System.in);
-        do{
-            String signature =  sign.next();
+    public void singContract() {
+        Scanner signCheck = new Scanner(System.in);
+        String signature;
+        do {
+            signature = signCheck.next();
             System.out.println("Поставив підпис");
-        }while (signatureM==signature);
+        } while (signature != sign);
     }
 
     public void checkAddress(){
