@@ -9,6 +9,14 @@ public class Client extends Member {
      * @param address клієнт живе за цією адресою
      */
     public String address;
+    public  String data;
+    public Client(String fullname, String address, int numberPhone,String data){
+        this.fullName=fullname;
+        this.address=address;
+        this.numberPhone=numberPhone;
+        this.data=data;
+    }
+
     /**
      * Метод який создає заявку на підключення
      */

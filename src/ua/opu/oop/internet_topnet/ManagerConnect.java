@@ -5,6 +5,22 @@ import java.util.Scanner;
  * @version 0.2.9
  */
 public class ManagerConnect extends Member {
+    public int monday;
+    public  int tuesday;
+    public int  wednesday;
+    public  int thursday;
+    public  int friday;
+    public int sunday;
+
+    public ManagerConnect(int monday, int tuesday, int wednesday, int thursday,int friday,int sunday){
+        this.monday=monday;
+        this.tuesday=tuesday;
+        this.wednesday=wednesday;
+        this.thursday=thursday;
+        this.friday=friday;
+        this.sunday=sunday;
+    }
+
     /**
      * @param programName це назва программи та провайдера
      */

@@ -15,25 +15,37 @@ public class Main {
             System.out.println("4)Кількість різних пакетів");
             System.out.println("5)Найбільша кількість клієнтів в одному будинку");
             System.out.println("6)День, на який заплановано найбільше число підключень");
+            System.out.println("Введіть 69 якщо бажаєте вийти");
             function = scan.nextInt();
 
             if (function == 1) {
                 vlad.showCountClient();
             }
 
-            if (1 + 2 == function) {
+            else if (function == 2) {
+                vlad.showCountConnectData();
+            }
+
+            else if (1 + 2 == function) {
                 vlad.allStonksConnect();
             }
 
-            if (function == 4) {
+            else if (function == 4) {
                 vlad.countPackage();
             }
 
-            if (function > 6) {
+            else if (function == 5) {
+                vlad.maxCountClientHouse();
+            }
+            else if (function == 6) {
+                vlad.dayPlanMaxCountConnect();
+            }
+
+            else if (function<=0 || function > 6 && function <69  || function>69) {
                 System.out.println("Не має такої функції");
             }
         }
-            while (function != -1) ;
+            while (function != 69) ;
         System.out.println("Вихід із системи");
     }
 }
