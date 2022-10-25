@@ -88,6 +88,5 @@ public class Program {
                 niceDay=Schedule[i];
             }
         }System.out.println("День, на який заплановано найбільше число підключень: "+niceDay);
-
     }
 }
