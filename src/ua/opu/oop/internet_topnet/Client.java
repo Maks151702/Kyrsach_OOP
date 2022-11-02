@@ -10,11 +10,13 @@ public class Client extends Member {
      */
     public String address;
     public  String data;
-    public Client(String fullname, String address, int numberPhone,String data){
+    public  String tarif;
+    public Client(String fullname, String address, int numberPhone,String data,String tarif){
         this.fullName=fullname;
         this.address=address;
         this.numberPhone=numberPhone;
         this.data=data;
+        this.tarif=tarif;
     }
 
     /**
@@ -42,31 +44,5 @@ public class Client extends Member {
         } while (signature != sign);
     }
 
-    /**
-     *Метод що підверджує підписання контракту зі сторони клієнта
-     * @return повертає обранний таріф у контракт.
-     */
-    public void chooseTarif(){
-        Scanner tarifCheck = new Scanner(System.in);
-        String nameTarif;
-        int speedInet;
-        int[] tariffs= new int[10];
-        System.out.println("Оберіть 1 із 3 тарифів");
-        int choise = tarifCheck.nextInt();
-            switch (choise){
-                case(1):
-                    speedInet=100;
-                    nameTarif = "Стандарт";
-                    break;
-                case(2):
-                    speedInet=200;
-                    nameTarif = "Сімейний";
-                    break;
-                case(3):
-                    speedInet=300;
-                    nameTarif = "Gaming";
-                    break;
-            }
-        //return nameTarif;
-    }
+
 }

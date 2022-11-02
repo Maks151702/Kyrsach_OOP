@@ -12,7 +12,7 @@ public class Main {
             System.out.println("1)Кількість клієнтів");
             System.out.println("2)Кількість підключень на певну дату");
             System.out.println("3)Загальна вартість підключень");
-            System.out.println("4)Кількість різних пакетів");
+            System.out.println("4)Кількість підключень на окремі пакети");
             System.out.println("5)Найбільша кількість клієнтів в одному будинку");
             System.out.println("6)День, на який заплановано найбільше число підключень");
             System.out.println("Введіть 69 якщо бажаєте вийти");
