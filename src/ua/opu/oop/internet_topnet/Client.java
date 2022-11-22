@@ -4,7 +4,7 @@ package ua.opu.oop.internet_topnet;
  * @version 0.2.11
  */
 import  java.util.Scanner;
-public class Client extends Member {
+public class Client extends Member{
     /**
      * @param address клієнт живе за цією адресою
      */
@@ -18,6 +18,11 @@ public class Client extends Member {
         this.data=data;
         this.tarif=tarif;
     }
+
+    public Client (Client other){
+        this(other.fullName,other.address,other.numberPhone,other.data,other.tarif);
+    }
+
 
     /**
      * Метод який создає заявку на підключення

@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author DarkCatty
  * @version 0.0.7
  */
-public class Program {
+public class Program implements Cloneable {
     /**
      * @param countClient кількість клієнтів
      */
@@ -107,5 +107,13 @@ public class Program {
         System.out.println("День, на який заплановано найбільше число підключень: " + niceDay);
     }
 
-    }//Program
+    public void HasCodeBro(){
+        Object a= new Object();
+        System.out.println(a.hashCode());
+    }
 
+    @Override
+    public Program clone() throws CloneNotSupportedException {
+        return (Program)super.clone();
+    }
+}//Program

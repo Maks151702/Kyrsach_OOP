@@ -3,10 +3,11 @@ package ua.opu.oop.internet_topnet;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws  Exception{
         int function;
         do {
             Program vlad = new Program();
+            Program clone = vlad.clone();
             Scanner scan = new Scanner(System.in);
             System.out.println("Оберіть функцію:");
             System.out.println("1)Кількість клієнтів");
@@ -41,7 +42,15 @@ public class Main {
                 vlad.dayPlanMaxCountConnect();
             }
 
-            else if (function<=0 || function > 6 && function <69  || function>69) {
+            else if (function == 7) {
+                vlad.HasCodeBro();
+            }
+
+            else if (function == 8) {
+                vlad.clone();
+            }
+
+            else if (function<=0 || function > 9 && function <69  || function>69) {
                 System.out.println("Не має такої функції");
             }
         }
