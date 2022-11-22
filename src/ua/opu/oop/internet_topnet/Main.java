@@ -38,6 +38,7 @@ public class Main {
             else if (function == 5) {
                 vlad.maxCountClientHouse();
             }
+
             else if (function == 6) {
                 vlad.dayPlanMaxCountConnect();
             }
