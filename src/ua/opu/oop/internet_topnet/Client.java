@@ -11,18 +11,25 @@ public class Client extends Member{
     public String address;
     public  String data;
     public  String tarif;
-    public Client(String fullname, String address, int numberPhone,String data,String tarif){
+    public int id;
+    public Client(String fullname, String address, int numberPhone,String data,String tarif, int id){
         this.fullName=fullname;
         this.address=address;
         this.numberPhone=numberPhone;
         this.data=data;
         this.tarif=tarif;
+        this.id=id;
     }
 
     public Client (Client other){
-        this(other.fullName,other.address,other.numberPhone,other.data,other.tarif);
+        this(other.fullName,other.address,other.numberPhone,other.data,other.tarif,other.id);
     }
+    public Client(){};
 
+    @Override
+    public Client clone() throws CloneNotSupportedException {
+        return (Client) super.clone();
+    }
 
     /**
      * Метод який создає заявку на підключення

@@ -1,5 +1,8 @@
 package ua.opu.oop.internet_topnet;
 
+import exeption.ClientValidationExeption;
+
+import java.lang.ref.Cleaner;
 import java.util.Scanner;
 /**
  * @author DarkCatty
@@ -11,12 +14,12 @@ public class Program implements Cloneable {
      */
     public String programName="TopNet";
     public  int[] stonks = new int[]{120,350,124,360,340};
-
-    Client client1 = new Client("Chubar M.","World",0663231723,"22.10","Standart");
-    Client client2 = new Client("Camado T.","Mountain",0673244566,"22.10","Standart");
-    Client client3 = new Client("Akaza M.","Train",0355452273,"24.06","Gaming");
-    Client client4 = new Client("Namikaza M.","Konoxa",0546772273,"13.05","Econom");
-    Client client5 = new Client("Uchiha I.","Konoxa",0226334233,"10.03","Gaming");
+    public String AllTarif[] = new String[]{"Econom","Standart","Gaming"};
+    Client client1 = new Client("Chubar M.","World",0663231723,"22.10","Standart",34);
+    Client client2 = new Client("Camado T.","Mountain",0673244566,"22.10","Standart",23);
+    Client client3 = new Client("Akaza M.","Train",0355452273,"24.06","Gaming",11);
+    Client client4 = new Client("Namikaza M.","Konoxa",0546772273,"13.05","Econom",15);
+    Client client5 = new Client("Uchiha I.","Konoxa",0226334233,"10.03","Gaming",1);
     int allProfit = 0;
 
     ManagerConnect manager1 = new ManagerConnect(10,8,5,7,2,14);
@@ -56,11 +59,10 @@ public class Program implements Cloneable {
         System.out.println("Загальна вартість підключень: " + allProfit);
     }
 
-    /** Кількість різних пакетів
+    /** Кількість підключень на окремі пакети
      */
     public void countPackage(){
         int connect = 0;
-        String AllTarif[] = new String[]{"Econom","Standart","Gaming"};
         System.out.println("Загальна кількість пакетів: " + AllTarif.length);
         System.out.println("Кількість підключень на окремі пакети:");
         String AllClientTarif[] = new String[]{client1.tarif,client2.tarif,client3.tarif,client4.tarif,client5.tarif};
@@ -111,9 +113,33 @@ public class Program implements Cloneable {
         Object a= new Object();
         System.out.println(a.hashCode());
     }
-
     @Override
     public Program clone() throws CloneNotSupportedException {
-        return (Program)super.clone();
+        return (Program) super.clone();
+    }
+     public int monthConnect;
+     private Client Cli;
+    public  void ErrorMan(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Оберіть бажающий місяць для підключення від 1 до 12");
+        monthConnect = scan.nextInt();
+        int Month[]= new int[]{1,2,3,4,5,6,7,8,9,10,11,12};
+        try {
+            if(monthConnect<0 || monthConnect>Month.length){
+                throw new ArrayIndexOutOfBoundsException();
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            ClientValidationExeption clientValidationExeption = new ClientValidationExeption(e.getMessage());
+            System.err.println(clientValidationExeption.getMessage());
+            System.err.println("Сталася помилка ArrayIndexOutOfBoundsException: "+e.getMessage());
+            System.err.println("Коректні межі масиву: від 0 до "+e.getMessage());
+            System.err.println("Некоректний індекс: "+monthConnect);
+        }
+
+        try {
+            Cli.OpenTicket();
+        }catch (NullPointerException e) {
+            System.err.println("Відсутній объект "+Cli);
+        }
     }
 }//Program

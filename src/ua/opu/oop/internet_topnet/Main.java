@@ -51,11 +51,16 @@ public class Main {
                 vlad.clone();
             }
 
-            else if (function<=0 || function > 9 && function <69  || function>69) {
+            if (function == 9) {
+                vlad.ErrorMan();
+            }
+
+
+            else if (function<=0 || function > 10) {
                 System.out.println("Не має такої функції");
             }
         }
-            while (function != 69) ;
+            while (function != 10) ;
         System.out.println("Вихід із системи");
     }
 }
