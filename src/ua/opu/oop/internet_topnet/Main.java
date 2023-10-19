@@ -3,64 +3,63 @@ package ua.opu.oop.internet_topnet;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws  Exception{
+    public static void main(String[] args) {
+        Program topnetProgram = new Program();
+        Scanner scanner = new Scanner(System.in);
+
         int function;
+        int exit;
+
         do {
-            Program vlad = new Program();
-            Program clone = vlad.clone();
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Оберіть функцію:");
-            System.out.println("1)Кількість клієнтів");
-            System.out.println("2)Кількість підключень на певну дату");
-            System.out.println("3)Загальна вартість підключень");
-            System.out.println("4)Кількість підключень на окремі пакети");
-            System.out.println("5)Найбільша кількість клієнтів в одному будинку");
-            System.out.println("6)День, на який заплановано найбільше число підключень");
-            System.out.println("Введіть 69 якщо бажаєте вийти");
-            function = scan.nextInt();
+            printMenu();
+            function = scanner.nextInt();
 
-            if (function == 1) {
-                vlad.showCountClient();
+            switch (function) {
+                case 1:
+                    topnetProgram.showCountClient();
+                    break;
+                case 2:
+                    topnetProgram.showCountConnectData();
+                    break;
+                case 3:
+                    topnetProgram.allStonksConnect();
+                    break;
+                case 4:
+                    topnetProgram.countPackage();
+                    break;
+                case 5:
+                    topnetProgram.maxCountClientHouse();
+                    break;
+                case 6:
+                    topnetProgram.dayPlanMaxCountConnect();
+                    break;
+                case 7:
+                    topnetProgram.Registration();
+                    break;
+                case 8:
+                    topnetProgram.checkStreet();
+                    break;
+                default:
+                    System.out.println("Немає такої функції");
+                    break;
             }
 
-            else if (function == 2) {
-                vlad.showCountConnectData();
-            }
+            System.out.println("Для виходу введіть 1, для продовження натисніть іншу клавішу:");
+            exit = scanner.nextInt();
+        } while (exit != 1);
 
-            else if (1 + 2 == function) {
-                vlad.allStonksConnect();
-            }
-
-            else if (function == 4) {
-                vlad.countPackage();
-            }
-
-            else if (function == 5) {
-                vlad.maxCountClientHouse();
-            }
-
-            else if (function == 6) {
-                vlad.dayPlanMaxCountConnect();
-            }
-
-            else if (function == 7) {
-                vlad.HasCodeBro();
-            }
-
-            else if (function == 8) {
-                vlad.clone();
-            }
-
-            if (function == 9) {
-                vlad.ErrorMan();
-            }
-
-
-            else if (function<=0 || function > 10) {
-                System.out.println("Не має такої функції");
-            }
-        }
-            while (function != 10) ;
         System.out.println("Вихід із системи");
+    }
+
+    private static void printMenu() {
+        System.out.println("Оберіть функцію:");
+        System.out.println("1) Кількість клієнтів");
+        System.out.println("2) Кількість підключень на певну дату");
+        System.out.println("3) Загальна вартість підключень");
+        System.out.println("4) Кількість підключень на окремі пакети");
+        System.out.println("5) Найбільша кількість клієнтів в одному будинку");
+        System.out.println("6) День, на який заплановано найбільше число підключень");
+        System.out.println("7) Регістрація:");
+        System.out.println("8) Перевірка вулиці:");
     }
 }

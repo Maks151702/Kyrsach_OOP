@@ -1,20 +1,21 @@
 package ua.opu.oop.internet_topnet;
 
-import exeption.ClientValidationExeption;
-
-import java.lang.ref.Cleaner;
 import java.util.Scanner;
+import java.util.ArrayList;
 /**
  * @author DarkCatty
  * @version 0.0.7
  */
-public class Program implements Cloneable {
+public class Program implements InterfaceObject {
     /**
      * @param countClient кількість клієнтів
      */
     public String programName="TopNet";
     public  int[] stonks = new int[]{120,350,124,360,340};
     public String AllTarif[] = new String[]{"Econom","Standart","Gaming"};
+    ArrayList<String> address = new ArrayList<>();
+
+
     Client client1 = new Client("Chubar M.","World",0663231723,"22.10","Standart",34);
     Client client2 = new Client("Camado T.","Mountain",0673244566,"22.10","Standart",23);
     Client client3 = new Client("Akaza M.","Train",0355452273,"24.06","Gaming",11);
@@ -54,7 +55,7 @@ public class Program implements Cloneable {
     public void allStonksConnect(){
 
         for(int i=0;i<stonks.length;i++){
-            allProfit =+ stonks[i];
+            allProfit = allProfit + stonks[i];
         }
         System.out.println("Загальна вартість підключень: " + allProfit);
     }
@@ -80,12 +81,16 @@ public class Program implements Cloneable {
     /** Найбільша кількість клієнтів в одному будинку
      */
     public void maxCountClientHouse() {
+        address.add(client1.address);
+        address.add(client2.address);
+        address.add(client3.address);
+        address.add(client4.address);
+        address.add(client5.address);
         String listOfAddresses[] = new String[]{"Konoxa", "Train", "Mountain", "World"};
         int people = 0;
         int max = 0;
-        String listOfAddressesClient[] = new String[]{client1.address, client2.address, client3.address, client4.address, client5.address};
         for (int i = 0; i < listOfAddresses.length; i++) {
-            for (String j : listOfAddressesClient) {
+            for (String j : address) {
                 if (listOfAddresses[i].equals(j)) {
                     people++;
                 }
@@ -109,37 +114,66 @@ public class Program implements Cloneable {
         System.out.println("День, на який заплановано найбільше число підключень: " + niceDay);
     }
 
-    public void HasCodeBro(){
-        Object a= new Object();
-        System.out.println(a.hashCode());
+    public void Registration(){
+        Client bro = new Client();
+        bro.OpenTicket();
+    }
+
+    public  void  checkStreet(){
+        ListAddress list_address = new ListAddress();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть назву вулиці: ");
+        String client_address=in.next();
+        list_address.street(client_address);
+
+
     }
     @Override
-    public Program clone() throws CloneNotSupportedException {
-        return (Program) super.clone();
-    }
-     public int monthConnect;
-     private Client Cli;
-    public  void ErrorMan(){
+    public void ObjectInterface() {
+        String name;
+        System.out.println("Введіть Призвище та Им'я клієнта у форматі(Ivanov D.):");
         Scanner scan = new Scanner(System.in);
-        System.out.println("Оберіть бажающий місяць для підключення від 1 до 12");
-        monthConnect = scan.nextInt();
-        int Month[]= new int[]{1,2,3,4,5,6,7,8,9,10,11,12};
-        try {
-            if(monthConnect<0 || monthConnect>Month.length){
-                throw new ArrayIndexOutOfBoundsException();
-            }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            ClientValidationExeption clientValidationExeption = new ClientValidationExeption(e.getMessage());
-            System.err.println(clientValidationExeption.getMessage());
-            System.err.println("Сталася помилка ArrayIndexOutOfBoundsException: "+e.getMessage());
-            System.err.println("Коректні межі масиву: від 0 до "+e.getMessage());
-            System.err.println("Некоректний індекс: "+monthConnect);
-        }
-
-        try {
-            Cli.OpenTicket();
-        }catch (NullPointerException e) {
-            System.err.println("Відсутній объект "+Cli);
+        name = scan.nextLine();
+        if(name.equals(client1.fullName)){
+            System.out.println("Знайден клієнт по вашему запиту:");
+            System.out.println("Призвище та ім'я: "+client1.fullName);
+            System.out.println("Адреса: "+client1.address);
+            System.out.println("Номер телефону: "+client1.numberPhone);
+            System.out.println("Дата підключення"+client1.data);
+            System.out.println("Призвище та ім'я: "+client1.tarif);
+            System.out.println("Id клієнта: "+client1.id);
+        } else if(name.equals(client2.fullName)){
+            System.out.println("Знайден клієнт по вашему запиту:");
+            System.out.println("Призвище та ім'я: "+client2.fullName);
+            System.out.println("Адреса: "+client2.address);
+            System.out.println("Номер телефону: "+client2.numberPhone);
+            System.out.println("Дата підключення"+client2.data);
+            System.out.println("Призвище та ім'я: "+client2.tarif);
+            System.out.println("Id клієнта: "+client2.id);
+        } else if(name.equals(client3.fullName)){
+            System.out.println("Знайден клієнт по вашему запиту:");
+            System.out.println("Призвище та ім'я: "+client3.fullName);
+            System.out.println("Адреса: "+client3.address);
+            System.out.println("Номер телефону: "+client3.numberPhone);
+            System.out.println("Дата підключення"+client3.data);
+            System.out.println("Призвище та ім'я: "+client3.tarif);
+            System.out.println("Id клієнта: "+client3.id);
+        } else if(name.equals(client4.fullName)){
+            System.out.println("Знайден клієнт по вашему запиту:");
+            System.out.println("Призвище та ім'я: "+client4.fullName);
+            System.out.println("Адреса: "+client4.address);
+            System.out.println("Номер телефону: "+client4.numberPhone);
+            System.out.println("Дата підключення"+client4.data);
+            System.out.println("Призвище та ім'я: "+client4.tarif);
+            System.out.println("Id клієнта: "+client4.id);
+        } else if(name.equals(client5.fullName)){
+            System.out.println("Знайден клієнт по вашему запиту:");
+            System.out.println("Призвище та ім'я: "+client5.fullName);
+            System.out.println("Адреса: "+client5.address);
+            System.out.println("Номер телефону: "+client5.numberPhone);
+            System.out.println("Дата підключення"+client5.data);
+            System.out.println("Призвище та ім'я: "+client5.tarif);
+            System.out.println("Id клієнта: "+client5.id);
         }
     }
 }//Program

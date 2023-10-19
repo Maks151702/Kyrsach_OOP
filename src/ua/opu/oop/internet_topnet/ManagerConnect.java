@@ -45,7 +45,4 @@ public class ManagerConnect extends Member {
             System.out.println("Поставив підпис");
         } while (signature != sign);
     }
-
-    public void checkAddress(){
-    }
 }

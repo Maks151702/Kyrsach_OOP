@@ -10,7 +10,7 @@ public class ClientValidationExeption extends RuntimeException{
     public ClientValidationExeption(String message){super("Клієнт виконує недоступну операцію : "+message); }
 
 
-    private void UseClassClient(){
+    public void UseClassClient(){
         Program program = new Program();
         System.out.println("Введіть номер тарифу який хочете вибрати");
         Scanner in = new Scanner(System.in);
@@ -25,4 +25,5 @@ public class ClientValidationExeption extends RuntimeException{
         }
 
     }
+
 }

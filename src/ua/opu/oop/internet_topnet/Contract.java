@@ -14,7 +14,5 @@ public class Contract {
     /**
      * створює кабінет клієнту
      */
-    protected void createIDClient(){
-        int ID= 3;
-    }
+    protected void createIDClient(){}
 }
